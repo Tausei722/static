@@ -1,0 +1,7 @@
+Django==4.2
+djangorestframework==3.14.0
+psycopg2==2.9.5
+moviepy==1.0.3
+argon2
+python-dotenv
+openai-whisper

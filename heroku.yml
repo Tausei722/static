@@ -1,0 +1,12 @@
+build:
+  docker:
+    web: Dockerfile
+setup:
+  addons:
+  - plan: heroku-postgresql
+    as: rio_database
+  config:
+    DATABASE_URL: ${DB_URL}
+    SECRET_KEY: ${SECRET_KEY}
+run:
+  web: bash -c "python manage.py makemigrations; python manage.py migrate; python manage.py createsuperuser --noinput --username ${USERNAME} --email ${EMAIL} --password ${PASSWORD}; python manage.py collectstatic --noinput; python manage.py runserver 0.0.0.0:$PORT;"
