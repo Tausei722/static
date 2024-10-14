@@ -6,4 +6,4 @@ argon2
 python-dotenv
 openai-whisper
 --find-links https://download.pytorch.org/whl/torch_stable.html
-torch==1.7.1+cpu
+torch==2.2.0+cpu
