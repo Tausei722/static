@@ -8,5 +8,12 @@ setup:
   config:
     DATABASE_URL: ${DB_URL}
     SECRET_KEY: ${SECRET_KEY}
+    APP_DATABASE_HOST: ${DB_HOST}
+    APP_DATABASE_PASSWORD: ${DB_PASSWORD}
+    APP_DATABASE_USERNAME: ${DB_USER}
 run:
   web: bash -c "python manage.py makemigrations; python manage.py migrate; python manage.py createsuperuser --noinput --username ${USERNAME} --email ${EMAIL} --password ${PASSWORD}; python manage.py collectstatic --noinput; python manage.py runserver 0.0.0.0:$PORT;"
+  environment:
+    - USERNAME=${USERNAME}
+    - EMAIL=${EMAIL}
+    - PASSWORD=${PASSWORD}

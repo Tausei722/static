@@ -5,3 +5,5 @@ moviepy==1.0.3
 argon2
 python-dotenv
 openai-whisper
+--find-links https://download.pytorch.org/whl/torch_stable.html
+torch==1.7.1+cpu
