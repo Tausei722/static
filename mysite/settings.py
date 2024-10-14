@@ -172,4 +172,4 @@ CSRF_TRUSTED_ORIGINS = [
 CORS_ORIGIN_WHITELIST = [
     'https://rio-app-d82eb8d186ab.herokuapp.com/',
 ]
-ALLOWED_HOSTS = ['herokuapp.com']
+ALLOWED_HOSTS = ['rio-app-d82eb8d186ab.herokuapp.com']
