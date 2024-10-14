@@ -168,7 +168,7 @@ CSRF_TRUSTED_ORIGINS = [
     'https://rio-app-d82eb8d186ab.herokuapp.com/flash',
     'https://rio-app-d82eb8d186ab.herokuapp.com/flash/signin',
     'https://rio-app-d82eb8d186ab.herokuapp.com/flash/login',
-                        ]
+]
 CORS_ORIGIN_WHITELIST = [
     'https://rio-app-d82eb8d186ab.herokuapp.com/',
 ]
