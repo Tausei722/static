@@ -164,4 +164,4 @@ AUTH_USER_MODEL = 'flash.CustomUser'
 # settings.py
 # CSRF_FAILURE_VIEW = 'flash.views.your_custom_view'
 CSRF_COOKIE_SECURE = True
-CSRF_TRUSTED_ORIGINS = ['https://rio-app-d82eb8d186ab.herokuapp.com/flash/']
+CSRF_TRUSTED_ORIGINS = ['https://rio-app-d82eb8d186ab.herokuapp.com/']
