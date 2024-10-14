@@ -16,9 +16,7 @@ from .models import CustomUser, Movie
 from .forms import UserRegistrationForm, MovieForm
 from .edit import recognition,make_movie,create_thumbnail
 from django.views.decorators.csrf import csrf_exempt
-from django.views.decorators.csrf import csrf_protect
 
-@csrf_protect
 class Template(generic.CreateView,generic.ListView):
     model = Movie
     form_class = MovieForm
@@ -91,7 +89,6 @@ class FailedTemplate(generic.TemplateView):
 class SuccessTemplate(generic.TemplateView):
     template_name = 'flash/success_save.html'
 
-@csrf_protect
 class SigninView(generic.CreateView):
     model = CustomUser
     form_class = UserRegistrationForm
@@ -109,8 +106,7 @@ class SigninView(generic.CreateView):
         else:
             message = 'サインインに失敗しました。もう一度確認してください'
             return render(form.request, 'singin_form.html', {'message':message, 'form':form})
-
-@csrf_protect
+        
 class LoginCompletion(generic.TemplateView):
     template_name = "flash/signin_completion.html"
 
@@ -129,7 +125,6 @@ class LogoutView(LogoutView):
     template_name = "flash/logout.html"
 
 #公開非公開を設定
-@csrf_protect
 class MoviePostMixin(generic.UpdateView):
     def post(self,form,*args,**kwargs):
         try:
