@@ -9,7 +9,7 @@ services:
       - POSTGRES_DB=${DB_NAME}
   web:
     build: .
-    command: bash -c "python manage.py makemigrations; python manage.py migrate; python manage.py createsuperuser --noinput --username ${USERNAME} --email ${EMAIL} --password ${PASSWORD}; python manage.py collectstatic --noinput; python manage.py runserver 0.0.0.0:8000;"
+    command: bash -c "python manage.py makemigrations; python manage.py migrate; python manage.py create_superuser --noinput --username ${USERNAME} --email ${EMAIL} --password ${PASSWORD}; python manage.py collectstatic --noinput; python manage.py runserver 0.0.0.0:8000;"
     volumes:
       - .:/mysite
     ports:
