@@ -55,7 +55,9 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
-
+# MIDDLEWARE_CLASSES = [
+#     'WhiteNoiseMiddleware',
+# ]
 ROOT_URLCONF = 'mysite.urls'
 
 TEMPLATES = [
@@ -148,7 +150,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 # STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-STATIC_ROOT = '/var/www/static/'
+STATIC_ROOT = '/mysite/static'
 STATICFILES_DIRS = []
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
