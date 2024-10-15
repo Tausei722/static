@@ -16,7 +16,9 @@ from .models import CustomUser, Movie
 from .forms import UserRegistrationForm, MovieForm
 from .edit import recognition,make_movie,create_thumbnail
 from django.views.decorators.csrf import csrf_exempt
+from django.views.decorators.csrf import csrf_protect
 
+@csrf_protect
 class Template(generic.CreateView,generic.ListView):
     model = Movie
     form_class = MovieForm
