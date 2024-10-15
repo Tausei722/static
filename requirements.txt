@@ -1,5 +1,5 @@
 Django==4.2.0
-# django-heroku
+django-heroku
 djangorestframework==3.14.0
 psycopg2==2.9.5
 moviepy==1.0.3
@@ -7,5 +7,6 @@ numpy<2
 argon2
 python-dotenv
 openai-whisper
+gunicorn
 --find-links https://download.pytorch.org/whl/torch_stable.html
 torch==2.2.0+cpu
