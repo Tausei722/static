@@ -1,5 +1,5 @@
 Django==4.2.0
-django-heroku
+# django-heroku
 djangorestframework==3.14.0
 psycopg2==2.9.5
 moviepy==1.0.3
