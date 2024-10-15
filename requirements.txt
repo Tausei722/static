@@ -6,7 +6,6 @@ djangorestframework==3.14.0
 psycopg2==2.9.5
 moviepy==1.0.3
 numpy<2
-# argon2
 argon2-cffi
 python-dotenv
 openai-whisper
