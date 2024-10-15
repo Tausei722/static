@@ -29,6 +29,6 @@ COPY policy.xml /etc/ImageMagick-6/
 RUN pip install --upgrade --root-user-action=ignore pip
 RUN pip install --upgrade --root-user-action=ignore setuptools
 RUN pip install -r requirements.txt
-COPY media .
+RUN mkdir media && cd media && mkdir images && mkdir videos && mkdir originally && cd ..
 COPY . .
 CMD ["python","manage.py","runserver","0.0.0.0:$PORT"]
