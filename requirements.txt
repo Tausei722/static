@@ -8,6 +8,5 @@ argon2
 python-dotenv
 openai-whisper
 gunicorn
-postgresql-client
 --find-links https://download.pytorch.org/whl/torch_stable.html
 torch==2.2.0+cpu
