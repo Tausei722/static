@@ -57,8 +57,8 @@ def make_movie(path,texts):
     output_path = os.path.join(media_path, 'リオ式'+file_name)
     write = final_clip.write_videofile(output_path)
     #ファイルを取得
-    content_file = ContentFile(open(write, 'rb').read())
-    return content_file,output_path
+    # content_file = ContentFile(open(write, 'rb').read())
+    return write,output_path
 
 # サムネイルを作るために動画の秒数で画像切り出し
 def create_thumbnail(path):
