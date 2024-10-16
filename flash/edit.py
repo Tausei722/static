@@ -69,5 +69,5 @@ def create_thumbnail(path):
     output_path = os.path.join(media_path, 'リオ式'+file_name)
     thumbnails = clip.save_frame(output_path, t=1)
     #ファイルを取得
-    content_file = ContentFile(thumbnails.get_frame(0).to_image().get_data())
-    return output_path,content_file
+    # content_file = ContentFile(thumbnails.get_frame(0).to_image().get_data())
+    return output_path,clip
