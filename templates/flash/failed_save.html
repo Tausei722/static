@@ -11,7 +11,7 @@
 <body>
     {{e}}
     <div class="has-text-centered box">
-        <h1>失敗しました</h1>
+        <h1>失敗しました。</h1>
         <br>
         <form action="{% url 'home' %}" method="POST" enctype="multipart/form-data" >
             {% csrf_token %}
