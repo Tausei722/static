@@ -46,7 +46,7 @@ MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
+    # 'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
@@ -164,19 +164,19 @@ AUTH_USER_MODEL = 'flash.CustomUser'
 
 # settings.py
 # CSRF_FAILURE_VIEW = 'flash.views.your_custom_view'
-CSRF_COOKIE_SECURE = True
-CSRF_TRUSTED_ORIGINS = [
-    'https://rio-app-d82eb8d186ab.herokuapp.com/',
-    'https://rio-app-d82eb8d186ab.herokuapp.com/flash',
-    'https://rio-app-d82eb8d186ab.herokuapp.com/flash/signin',
-    'https://rio-app-d82eb8d186ab.herokuapp.com/flash/login',
-]
-CORS_ORIGIN_WHITELIST = [
-    'https://rio-app-d82eb8d186ab.herokuapp.com/',
-    'https://rio-app-d82eb8d186ab.herokuapp.com/flash',
-    'https://rio-app-d82eb8d186ab.herokuapp.com/admin',
-]
-CSRF_COOKIE_DOMAIN = '.herokuapp.com'
-ALLOWED_HOSTS = ['rio-app-d82eb8d186ab.herokuapp.com']
-CSRF_COOKIE_SECURE = True
-SESSION_COOKIE_SECURE = True
+# CSRF_COOKIE_SECURE = True
+# CSRF_TRUSTED_ORIGINS = [
+#     'https://rio-app-d82eb8d186ab.herokuapp.com/',
+#     'https://rio-app-d82eb8d186ab.herokuapp.com/flash',
+#     'https://rio-app-d82eb8d186ab.herokuapp.com/flash/signin',
+#     'https://rio-app-d82eb8d186ab.herokuapp.com/flash/login',
+# ]
+# CORS_ORIGIN_WHITELIST = [
+#     'https://rio-app-d82eb8d186ab.herokuapp.com/',
+#     'https://rio-app-d82eb8d186ab.herokuapp.com/flash',
+#     'https://rio-app-d82eb8d186ab.herokuapp.com/admin',
+# ]
+# CSRF_COOKIE_DOMAIN = '.herokuapp.com'
+# ALLOWED_HOSTS = ['rio-app-d82eb8d186ab.herokuapp.com']
+# CSRF_COOKIE_SECURE = True
+# SESSION_COOKIE_SECURE = True
