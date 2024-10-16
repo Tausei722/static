@@ -57,6 +57,7 @@ class Template(generic.CreateView,generic.ListView):
             #入れ子になってる配列をならすとき、後ろに連ねてく
         texts = [word for words in all_word['segments'] for word in words['words']]
         movie = make_movie(saved_path,texts)
+        print(movie,"あああああああああああああああああああああああああああああああああ")
             #ファイル自体じゃないとDBで保存してくれない
         output_path = os.path.join(MEDIA_ROOT, movie[1])
         print(output_path)

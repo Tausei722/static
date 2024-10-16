@@ -3,6 +3,7 @@ from django.utils import timezone
 
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager,PermissionsMixin
 from django.core.files.storage import FileSystemStorage
+from cloudinary.models import CloudinaryField
 #ここでuser登録の処理を定義
 class CustomUserManager(BaseUserManager):
     def create_user(self, email, username, password):
@@ -55,7 +56,8 @@ class Movie(models.Model):
     created = models.DateTimeField(verbose_name="投稿日時", auto_now_add=True, null=False, blank=False)
     post_user = models.ForeignKey(CustomUser, on_delete=models.CASCADE,default=None)
     thumbnail  = models.ImageField(upload_to='images/',storage=fs,default=None)
-
+    cloudinary_thumbnail = CloudinaryField('image',blank=True,null=True,folder="media/images")
+    cloudinary_video = CloudinaryField('video',blank=True,null=True,folder="media/videos")
     public = models.BooleanField(default=False)
     rio_recommendation = models.BooleanField(default=False)
     # upload_user = models.ForeignKey(CustomUser, on_delete=models.CASCADE)

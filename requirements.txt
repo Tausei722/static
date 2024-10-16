@@ -1,6 +1,7 @@
 Django==4.2.0
 django-heroku
 dj-database-url
+cloudinary
 django-cloudinary-storage
 django-cloudinary-storage[video]
 django-cors-headers 
