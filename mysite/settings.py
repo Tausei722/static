@@ -176,7 +176,7 @@ AUTH_USER_MODEL = 'flash.CustomUser'
 #     'https://rio-app-d82eb8d186ab.herokuapp.com/flash',
 #     'https://rio-app-d82eb8d186ab.herokuapp.com/admin',
 # ]
-# CSRF_COOKIE_DOMAIN = '.herokuapp.com'
-# ALLOWED_HOSTS = ['rio-app-d82eb8d186ab.herokuapp.com']
-# CSRF_COOKIE_SECURE = True
-# SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_DOMAIN = '.herokuapp.com'
+ALLOWED_HOSTS = ['rio-app-d82eb8d186ab.herokuapp.com']
+CSRF_COOKIE_SECURE = True
+SESSION_COOKIE_SECURE = True
