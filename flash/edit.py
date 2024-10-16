@@ -16,6 +16,10 @@ from moviepy.video.VideoClip import VideoClip
 from django.core.files.base import ContentFile
 from pathlib import Path
 import numpy as np
+
+import cloudinary
+import cloudinary.uploader
+
 MEDIA_ROOT = os.path.join(Path(__file__).resolve().parent.parent, 'media')
 BASE_DIR = Path(__file__).resolve().parent.parent
 #ファイルから音声認識して単語ごと秒数を記録
@@ -56,9 +60,9 @@ def make_movie(path,texts):
     path_name = path.rsplit(file_name,1)[0]
     output_path = os.path.join(media_path, 'リオ式'+file_name)
     write = final_clip.write_videofile(output_path)
-    #ファイルを取得
-    # content_file = ContentFile(open(write, 'rb').read())
-    return write,output_path
+    #cloudinaryにアップロード
+    result = cloudinary.uploader.upload(write, public_id='リオ式'+file_name, resource_type="video")
+    return result['secure_url'],output_path
 
 # サムネイルを作るために動画の秒数で画像切り出し
 def create_thumbnail(path):
@@ -68,6 +72,6 @@ def create_thumbnail(path):
     media_path = MEDIA_ROOT + '/images'
     output_path = os.path.join(media_path, 'リオ式'+file_name)
     thumbnails = clip.save_frame(output_path, t=1)
-    #ファイルを取得
-    # content_file = ContentFile(thumbnails.get_frame(0).to_image().get_data())
-    return output_path,clip
+    #cloudinaryにアップロード
+    result = cloudinary.uploader.upload(thumbnails, public_id='リオ式'+file_name, resource_type="image")
+    return output_path,result['secure_url']
