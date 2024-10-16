@@ -13,7 +13,7 @@ from moviepy.editor import VideoFileClip, TextClip, CompositeVideoClip
 
 from moviepy.editor import *
 from moviepy.video.VideoClip import VideoClip
-
+from django.core.files.base import ContentFile
 from pathlib import Path
 import numpy as np
 MEDIA_ROOT = os.path.join(Path(__file__).resolve().parent.parent, 'media')
@@ -56,7 +56,9 @@ def make_movie(path,texts):
     path_name = path.rsplit(file_name,1)[0]
     output_path = os.path.join(media_path, 'リオ式'+file_name)
     write = final_clip.write_videofile(output_path)
-    return final_clip,output_path
+    #ファイルを取得
+    content_file = ContentFile(open(write, 'rb').read())
+    return content_file,output_path
 
 # サムネイルを作るために動画の秒数で画像切り出し
 def create_thumbnail(path):
@@ -66,4 +68,6 @@ def create_thumbnail(path):
     media_path = MEDIA_ROOT + '/images'
     output_path = os.path.join(media_path, 'リオ式'+file_name)
     thumbnails = clip.save_frame(output_path, t=1)
-    return output_path,thumbnails
+    #ファイルを取得
+    content_file = ContentFile(thumbnails.get_frame(0).to_image().get_data())
+    return output_path,content_file
