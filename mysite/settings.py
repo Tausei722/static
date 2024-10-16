@@ -29,7 +29,6 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -53,9 +52,9 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
-# MIDDLEWARE_CLASSES = [
-#     'WhiteNoiseMiddleware',
-# ]
+MIDDLEWARE_CLASSES = [
+    'WhiteNoiseMiddleware',
+]
 ROOT_URLCONF = 'mysite.urls'
 
 TEMPLATES = [
@@ -168,10 +167,10 @@ AUTH_USER_MODEL = 'flash.CustomUser'
 # CSRF_FAILURE_VIEW = 'flash.views.your_custom_view'
 CSRF_COOKIE_SECURE = True
 CSRF_TRUSTED_ORIGINS = ['https://rio-app-d82eb8d186ab.herokuapp.com']
-CORS_ORIGIN_WHITELIST = [
-    'https://rio-app-d82eb8d186ab.herokuapp.com/',
-]
+# CORS_ORIGIN_WHITELIST = ['https://*.rio-app-d82eb8d186ab.herokuapp.com']
+CORS_ALLOWED_ORIGIN_REGEX = r'^https://rio-app-d82eb8d186ab\.herokuapp\.com$'
 CSRF_COOKIE_DOMAIN = '.herokuapp.com'
 ALLOWED_HOSTS = ['rio-app-d82eb8d186ab.herokuapp.com']
+CORS_ORIGIN_ALLOW_ALL = True
 CSRF_COOKIE_SECURE = True
 SESSION_COOKIE_SECURE = True
