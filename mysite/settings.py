@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'corsheaders',
     'flash',
 ]
 
@@ -46,7 +47,8 @@ MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
-    # 'django.middleware.csrf.CsrfViewMiddleware',
+    'django.middleware.csrf.CsrfViewMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
@@ -165,10 +167,7 @@ AUTH_USER_MODEL = 'flash.CustomUser'
 # settings.py
 # CSRF_FAILURE_VIEW = 'flash.views.your_custom_view'
 CSRF_COOKIE_SECURE = True
-CSRF_TRUSTED_ORIGINS = [
-    'https://rio-app-d82eb8d186ab.herokuapp.com/',
-
-]
+CSRF_TRUSTED_ORIGINS = ['https://rio-app-d82eb8d186ab.herokuapp.com']
 CORS_ORIGIN_WHITELIST = [
     'https://rio-app-d82eb8d186ab.herokuapp.com/',
 ]
