@@ -72,6 +72,9 @@ def create_thumbnail(path):
     media_path = MEDIA_ROOT + '/images'
     output_path = os.path.join(media_path, 'リオ式'+file_name)
     thumbnails = clip.save_frame(output_path, t=1)
+    # 保存した画像を読み込んで、ContentFileを作成
+    with open(output_path, 'rb') as f:
+        content_file = ContentFile(f.read())
     #cloudinaryにアップロード
-    result = cloudinary.uploader.upload(thumbnails, public_id='リオ式'+file_name, resource_type="image")
+    result = cloudinary.uploader.upload(content_file, public_id='リオ式'+file_name, resource_type="image")
     return output_path,result['secure_url']
