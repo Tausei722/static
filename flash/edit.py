@@ -65,5 +65,5 @@ def create_thumbnail(path):
     file_name = str(datetime.datetime.now()) +"." + "jpeg"
     media_path = MEDIA_ROOT + '/images'
     output_path = os.path.join(media_path, 'リオ式'+file_name)
-    clip.save_frame(output_path, t=1)
-    return output_path
+    thumbnails = clip.save_frame(output_path, t=1)
+    return output_path,thumbnails

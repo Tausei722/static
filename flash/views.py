@@ -79,7 +79,9 @@ class Template(generic.CreateView,generic.ListView):
                     movie = save_path,
                     originally_movie = originally_path,
                     post_user = post_user,
-                    thumbnail = thumbnail,
+                    thumbnail = thumbnail[0],
+                    cloudinary_thumbnail = thumbnail[1],
+                    cloudinary_video = movie[0],
                 ).save()
                 return redirect('success_save')
             except Exception as e:
