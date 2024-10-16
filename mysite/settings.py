@@ -169,11 +169,9 @@ CSRF_TRUSTED_ORIGINS = [
     'https://rio-app-d82eb8d186ab.herokuapp.com/',
 
 ]
-# CORS_ORIGIN_WHITELIST = [
-#     'https://rio-app-d82eb8d186ab.herokuapp.com/',
-#     'https://rio-app-d82eb8d186ab.herokuapp.com/flash',
-#     'https://rio-app-d82eb8d186ab.herokuapp.com/admin',
-# ]
+CORS_ORIGIN_WHITELIST = [
+    'https://rio-app-d82eb8d186ab.herokuapp.com/',
+]
 CSRF_COOKIE_DOMAIN = '.herokuapp.com'
 ALLOWED_HOSTS = ['rio-app-d82eb8d186ab.herokuapp.com']
 CSRF_COOKIE_SECURE = True
