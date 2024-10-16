@@ -80,13 +80,11 @@ class Template(generic.CreateView,generic.ListView):
                     post_user = post_user,
                     thumbnail = thumbnail,
                 ).save()
-                # return redirect('success_save')
-                return render(form.request,"success_save.html")
+                return redirect('success_save')
             except Exception as e:
                 return render(form.request,'failed_save',{'e':e})
         else:
-            # return redirect('failed_save')
-            return render(form.request,"failed_save.html")
+            return redirect('failed_save')
         
 class FailedTemplate(generic.TemplateView):
     template_name = 'flash/failed_save.html'
