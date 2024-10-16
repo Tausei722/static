@@ -1,6 +1,7 @@
 {% extends "base.html" %} 
 {% block content %}
 {% load static %}
+{% load cloudinary %}
 <form action="" method="POST" enctype="multipart/form-data" class="send-form has-text-centered box" id="myForm" name="movie">
     {% csrf_token %}
     <div class="field">
