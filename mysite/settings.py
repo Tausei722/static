@@ -175,4 +175,5 @@ CORS_ORIGIN_WHITELIST = [
     'https://rio-app-d82eb8d186ab.herokuapp.com/flash',
     'https://rio-app-d82eb8d186ab.herokuapp.com/admin',
 ]
+CSRF_COOKIE_DOMAIN = '.herokuapp.com'
 ALLOWED_HOSTS = ['rio-app-d82eb8d186ab.herokuapp.com']
