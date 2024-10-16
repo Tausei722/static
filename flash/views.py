@@ -18,6 +18,13 @@ from .edit import recognition,make_movie,create_thumbnail
 from django.views.decorators.csrf import csrf_exempt
 from django.views.decorators.csrf import csrf_protect
 
+import dj_database_url
+
+# Build paths inside the project like this: BASE_DIR / 'subdir'.
+BASE_DIR = Path(__file__).resolve().parent.parent
+# env.read os.getenv(os.path.join(BASE_DIR, '.env'))
+dotenv_path=os.path.join(BASE_DIR, '.env')
+load_dotenv(dotenv_path=dotenv_path)
 
 class Template(generic.CreateView,generic.ListView):
     model = Movie
@@ -25,6 +32,7 @@ class Template(generic.CreateView,generic.ListView):
     template_name = "flash/index.html"
 
     def get_context_data(self,**kwargs):
+        print(os.getenv('SECRET_KEY'))
         context = super().get_context_data(**kwargs)
         # pdb.set_trace()
         context['form'] = self.get_form()
