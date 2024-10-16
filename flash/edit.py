@@ -60,8 +60,11 @@ def make_movie(path,texts):
     path_name = path.rsplit(file_name,1)[0]
     output_path = os.path.join(media_path, 'リオ式'+file_name)
     write = final_clip.write_videofile(output_path)
+    # 保存した画像を読み込んで、ContentFileを作成
+    with open(output_path, 'rb') as f:
+        content_file = ContentFile(f.read())
     #cloudinaryにアップロード
-    result = cloudinary.uploader.upload(write, public_id='リオ式'+file_name, resource_type="video")
+    result = cloudinary.uploader.upload(content_file, public_id='リオ式'+file_name, resource_type="video")
     return result['secure_url'],output_path
 
 # サムネイルを作るために動画の秒数で画像切り出し
