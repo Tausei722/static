@@ -126,9 +126,9 @@ AUTH_PASSWORD_VALIDATORS = [
 
 #動画保存のためのツール設定
 CLOUDINARY_STORAGE  = {
-    'CLOUD_NAME':env('CLOUDINARY_NAME'),
-    'API_KEY': env('CLOUDINARY_API_KEY'),
-    'API_SECRET': env('CLOUDINARY_API_SECRET'),
+    'CLOUD_NAME':os.getenv('CLOUDINARY_NAME'),
+    'API_KEY': os.getenv('CLOUDINARY_API_KEY'),
+    'API_SECRET': os.getenv('CLOUDINARY_API_SECRET'),
 }
 # settings.py
 PASSWORD_HASHERS = [
