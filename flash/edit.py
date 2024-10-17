@@ -67,8 +67,7 @@ def make_movie(path,texts):
     #cloudinaryにアップロード
     # result = cloudinary.uploader.upload(content_file, public_id=str(datetime.datetime.now()), resource_type="video")
     public_id = str(datetime.datetime.now())
-    options = {"format": "mp4"}
-    custom_url = cloudinary.CloudinaryImage(public_id).build_url(options)
+    custom_url = cloudinary.CloudinaryImage(public_id).build_url(format="mp4")
     return custom_url,output_path
 
 # サムネイルを作るために動画の秒数で画像切り出し
@@ -85,6 +84,5 @@ def create_thumbnail(path):
     #cloudinaryにアップロード
     # result = cloudinary.uploader.upload(content_file, public_id=str(datetime.datetime.now()), resource_type="image")
     public_id = str(datetime.datetime.now())
-    options = {"format": "jpeg"}
-    custom_url = cloudinary.CloudinaryImage(public_id).build_url(options)
+    custom_url = cloudinary.CloudinaryImage(public_id).build_url(format="jpeg")
     return output_path,custom_url
