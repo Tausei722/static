@@ -95,6 +95,9 @@ class FailedTemplate(generic.TemplateView):
 class SuccessTemplate(generic.TemplateView):
     template_name = 'flash/success_save.html'
 
+class CsrfCustomTemplate(generic.TemplateView):
+    template_name = 'flash/csrf_custom_view.html'
+
 class SigninView(generic.CreateView):
     model = CustomUser
     form_class = UserRegistrationForm

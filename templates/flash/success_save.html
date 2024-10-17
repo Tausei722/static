@@ -11,8 +11,9 @@
 <body>
     {{e}}
     <div class="has-text-centered box">
-        <h1>動画が作られました</h1>
+        <h1>動画が作られました。</h1>
         <br>
+        <h2>動画はログイン後にマイページから閲覧できます</h2>
         <a href="{% url 'home' %}">
             {% csrf_token %}
             <div class="field">

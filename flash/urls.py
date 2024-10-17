@@ -13,4 +13,5 @@ urlpatterns = [
     path("failed_save", views.FailedTemplate.as_view(), name='failed_save'),
     path("success_save", views.SuccessTemplate.as_view(), name='success_save'),
     path("mypage/<int:pk>", views.MyPage.as_view(), name='mypage'),
+    path("csrf_custom_view", views.CsrfCustomTemplate.as_view(), name='csrf_custom_view'),
 ]
