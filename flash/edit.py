@@ -64,7 +64,7 @@ def make_movie(path,texts):
     with open(output_path, 'rb') as f:
         content_file = ContentFile(f.read())
     #cloudinaryにアップロード
-    result = cloudinary.uploader.upload(content_file, public_id='リオ式'+file_name, resource_type="video")
+    result = cloudinary.uploader.upload(content_file, public_id='riostyle'+file_name, resource_type="video", type='upload')
     return result['secure_url'],output_path
 
 # サムネイルを作るために動画の秒数で画像切り出し
@@ -79,5 +79,5 @@ def create_thumbnail(path):
     with open(output_path, 'rb') as f:
         content_file = ContentFile(f.read())
     #cloudinaryにアップロード
-    result = cloudinary.uploader.upload(content_file, public_id='リオ式'+file_name, resource_type="image")
+    result = cloudinary.uploader.upload(content_file, public_id='riostyle'+file_name, resource_type="image", type='upload')
     return output_path,result['secure_url']
