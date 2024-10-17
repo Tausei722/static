@@ -85,7 +85,7 @@ class Template(generic.CreateView,generic.ListView):
                 ).save()
                 return redirect('success_save')
             except Exception as e:
-                return render(form.request,'failed_save',{'e':e})
+                return redirect('failed_save')
         else:
             return redirect('failed_save')
         
