@@ -19,6 +19,7 @@ import numpy as np
 
 import cloudinary
 import cloudinary.uploader
+import cloudinary.api
 
 MEDIA_ROOT = os.path.join(Path(__file__).resolve().parent.parent, 'media')
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -64,8 +65,11 @@ def make_movie(path,texts):
     with open(output_path, 'rb') as f:
         content_file = ContentFile(f.read())
     #cloudinaryにアップロード
-    result = cloudinary.uploader.upload(content_file, public_id='riostyle'+file_name, resource_type="video")
-    return result['secure_url'],output_path
+    # result = cloudinary.uploader.upload(content_file, public_id=str(datetime.datetime.now()), resource_type="video")
+    public_id = str(datetime.datetime.now())
+    options = {"format": "mp4"}
+    custom_url = cloudinary.CloudinaryImage(public_id).build_url(options)
+    return custom_url,output_path
 
 # サムネイルを作るために動画の秒数で画像切り出し
 def create_thumbnail(path):
@@ -79,5 +83,8 @@ def create_thumbnail(path):
     with open(output_path, 'rb') as f:
         content_file = ContentFile(f.read())
     #cloudinaryにアップロード
-    result = cloudinary.uploader.upload(content_file, public_id='riostyle'+file_name, resource_type="image")
-    return output_path,result['secure_url']
+    # result = cloudinary.uploader.upload(content_file, public_id=str(datetime.datetime.now()), resource_type="image")
+    public_id = str(datetime.datetime.now())
+    options = {"format": "jpeg"}
+    custom_url = cloudinary.CloudinaryImage(public_id).build_url(options)
+    return output_path,custom_url
