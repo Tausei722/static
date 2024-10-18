@@ -24,7 +24,6 @@ RUN apt-get update && apt-get install -y ffmpeg && apt-get install -y imagemagic
 # RUN sed -i '/<policy domain="path" rights="none" pattern="@\*"/d' /etc/ImageMagick-6/policy.xml 
 #フォントのインストール
 COPY AppliMincho .
-COPY static .
 COPY policy.xml /etc/ImageMagick-6/
 #moduleのインストール
 RUN pip install --upgrade --root-user-action=ignore pip
