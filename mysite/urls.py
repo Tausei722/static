@@ -23,4 +23,4 @@ from .settings import STATIC_ROOT,STATIC_URL,MEDIA_ROOT,MEDIA_URL
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('flash/', include('flash.urls')),
-] + static(STATIC_URL, document_root=STATIC_ROOT) + static(MEDIA_URL, document_root=MEDIA_ROOT)
+] + static(MEDIA_URL, document_root=MEDIA_ROOT) + static(STATIC_URL, document_root=STATIC_ROOT)
