@@ -161,10 +161,10 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 # STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-# STATIC_ROOT = os.path.join(BASE_DIR, 'staticfile')
-STATIC_ROOT = '/static'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfile')
+# STATIC_ROOT = '/static'
 STATICFILES_DIRS = [
-    BASE_DIR / "static",
+    # BASE_DIR / "static",
     os.path.join(BASE_DIR, 'static')
 ]
 # Default primary key field type
@@ -185,5 +185,5 @@ CORS_ALLOWED_ORIGIN_REGEX = r'^https://rio-app-d82eb8d186ab\.herokuapp\.com$'
 CSRF_COOKIE_DOMAIN = '.herokuapp.com'
 ALLOWED_HOSTS = ['rio-app-d82eb8d186ab.herokuapp.com']
 CORS_ORIGIN_ALLOW_ALL = True
-CSRF_COOKIE_SECURE = True
+# CSRF_COOKIE_SECURE = True
 # SESSION_COOKIE_SECURE = True
