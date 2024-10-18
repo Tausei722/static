@@ -19,7 +19,7 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 
-from .settings import STATIC_ROOT,STATIC_URL,STATICFILES_DIRS,MEDIA_ROOT,MEDIA_URL
+from .settings import STATIC_ROOT,STATIC_URL,MEDIA_ROOT,MEDIA_URL
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('flash/', include('flash.urls')),
