@@ -159,14 +159,14 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
-STATIC_URL = '/static/'
+STATIC_URL = 'static/'
 # STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 # STATIC_ROOT = '/static'
-STATICFILES_DIRS = [
-    # BASE_DIR / "static",
-    STATIC_ROOT
-]
+# STATICFILES_DIRS = [
+#     BASE_DIR / "static",
+#     STATIC_ROOT
+# ]
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
@@ -180,10 +180,11 @@ AUTH_USER_MODEL = 'flash.CustomUser'
 # settings.py
 # CSRF_FAILURE_VIEW = 'flash.views.csrf_custom_view'
 CSRF_TRUSTED_ORIGINS = ['https://rio-app-d82eb8d186ab.herokuapp.com']
+CSRF_ALLOWED_ORIGINS = ['https://rio-app-d82eb8d186ab.herokuapp.com']
 # CORS_ORIGIN_WHITELIST = ['https://*.rio-app-d82eb8d186ab.herokuapp.com']
-# CORS_ALLOWED_ORIGIN_REGEX = r'^https://rio-app-d82eb8d186ab\.herokuapp\.com$'
+CORS_ALLOWED_ORIGIN_REGEX = r'^https://rio-app-d82eb8d186ab\.herokuapp\.com$'
 # CSRF_COOKIE_DOMAIN = '.herokuapp.com'
-# ALLOWED_HOSTS = ['rio-app-d82eb8d186ab.herokuapp.com']
-# CORS_ORIGIN_ALLOW_ALL = True
+ALLOWED_HOSTS = ['rio-app-d82eb8d186ab.herokuapp.com']
+CORS_ORIGIN_ALLOW_ALL = True
 # CSRF_COOKIE_SECURE = True
 # SESSION_COOKIE_SECURE = True
