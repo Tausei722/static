@@ -163,7 +163,7 @@ USE_TZ = True
 #STATICFILES_DIRSからSTATIC_ROOTにコピーされたファイルをSTATIC_URLでアクセスできるので
 #それを示すURLをhtmlで読み込ませればいいはずなのにSTATIC_ROOTにコピーされていない
 #STATIC_ROOTにSTATICFILES_DIRSをcollectコマンドでコピーするルールを破るのはよくない
-STATIC_ROOT = 'var/www/static/'
+STATIC_ROOT = ''
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
