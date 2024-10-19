@@ -160,13 +160,13 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
 # STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-#static(STATIC_URL, document_root=STATICFILES_DIRS)でURLを作成
-#collectでSTATIC_ROOTにコピーしてSTATIC_URLにアクセス
-#STATICFILES_DIRSで参照されたファイルが
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+#STATICFILES_DIRSからSTATIC_ROOTにコピーされたファイルをSTATIC_URLでアクセスできるので
+#それを示すURLをhtmlで読み込ませればいいはずなのにSTATIC_ROOTにコピーされていない
+#STATIC_ROOTにSTATICFILES_DIRSをcollectコマンドでコピーするルールを破るのはよくない
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
-    os.path.join(STATIC_URL, 'static'),
+    os.path.join(BASE_DIR, 'static'),
 ]
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
