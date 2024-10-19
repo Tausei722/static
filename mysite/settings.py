@@ -18,7 +18,8 @@ import cloudinary
 import cloudinary_storage
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
+# BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # env.read os.getenv(os.path.join(BASE_DIR, '.env'))
 dotenv_path=os.path.join(BASE_DIR, '.env')
 load_dotenv(dotenv_path=dotenv_path)
@@ -163,10 +164,10 @@ USE_TZ = True
 #STATICFILES_DIRSからSTATIC_ROOTにコピーされたファイルをSTATIC_URLでアクセスできるので
 #それを示すURLをhtmlで読み込ませればいいはずなのにSTATIC_ROOTにコピーされていない
 #STATIC_ROOTにSTATICFILES_DIRSをcollectコマンドでコピーするルールを破るのはよくない
-STATIC_ROOT = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'staticfiles')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
-    os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'static'),
+    os.path.join(BASE_DIR, 'static'),
 ]
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
