@@ -163,10 +163,10 @@ USE_TZ = True
 #STATICFILES_DIRSからSTATIC_ROOTにコピーされたファイルをSTATIC_URLでアクセスできるので
 #それを示すURLをhtmlで読み込ませればいいはずなのにSTATIC_ROOTにコピーされていない
 #STATIC_ROOTにSTATICFILES_DIRSをcollectコマンドでコピーするルールを破るのはよくない
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_ROOT = 'var/www/static/'
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, ''),
+    os.path.join(BASE_DIR, 'static'),
 ]
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
