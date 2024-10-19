@@ -160,6 +160,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
 # STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+#static(STATIC_URL, document_root=STATICFILES_DIRS)でURLを作成
+#collectでSTATIC_ROOTにコピーしてSTATIC_URLにアクセス
+#STATICFILES_DIRSで参照されたファイルが
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
