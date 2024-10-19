@@ -31,7 +31,7 @@ RUN pip install --upgrade --root-user-action=ignore setuptools
 RUN pip install -r requirements.txt
 RUN mkdir media && cd media && mkdir images && mkdir videos && mkdir originally && cd ..
 RUN apt-get install postgresql -y
-COPY static .
+COPY static staticfiles
 # RUN nano ~/.bashrc
 # RUN export PATH=$PATH:/usr/lib/postgresql/15/bin
 # RUN source ~/.bashrc
